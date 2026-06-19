@@ -51,6 +51,7 @@ skills/
 | **png-xiaohongshu** | 小红书封面+配图生成 | `/png-xiaohongshu` |
 | **ian-xiaohei-illustrations** | KATONG风格正文配图 | `/ian-xiaohei-illustrations 配图` |
 | **baoyu-article-illustrator** | 文章配图策划与生成 | `/baoyu-article-illustrator` |
+| **cover-generator** | 自动生成高点击率封面 Prompt，16:9和9:16双尺寸 | `/cover-generator` |
 | **ljg-card** | 内容转PNG视觉卡片 | `/ljg-card` |
 
 ### 📊 演示与幻灯片
@@ -150,7 +151,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：40**
+**当前技能数量：41**
 
 > 最后更新：2026-06-19
 > 维护者：@dqtx760
