@@ -1,0 +1,15 @@
+# 环境配置
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# 生成的临时的技能目录（不是真正的 skill）
+tmp/
+temp/
