@@ -1,6 +1,6 @@
 ---
 name: baoyu-article-illustrator
-description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style two-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配图".
+description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style two-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配�?.
 ---
 
 # Article Illustrator
@@ -38,12 +38,12 @@ See [references/styles.md](references/styles.md) for Core Styles, full gallery, 
 - [ ] Step 2: Analyze content
 - [ ] Step 3: Confirm settings (AskUserQuestion)
 - [ ] Step 4: Generate images
-- [ ] Step 5: Finalize
+- [ ] Step 5: Finalize & Upload & Upload
 ```
 
 ### Step 1: Pre-check
 
-**1.5 Load Preferences (EXTEND.md) ⛔ BLOCKING**
+**1.5 Load Preferences (EXTEND.md) �?BLOCKING**
 
 ```bash
 test -f .claude/skills/baoyu-article-illustrator/EXTEND.md && echo "project"
@@ -53,7 +53,7 @@ test -f "$HOME/.claude/skills/baoyu-article-illustrator/EXTEND.md" && echo "user
 | Result | Action |
 |--------|--------|
 | Found | Read, parse, display summary |
-| Not found | ⛔ Run [first-time-setup](references/config/first-time-setup.md) |
+| Not found | �?Run [first-time-setup](references/config/first-time-setup.md) |
 
 Full procedures: [references/workflow.md](references/workflow.md#step-1-pre-check)
 
@@ -66,7 +66,7 @@ Full procedures: [references/workflow.md](references/workflow.md#step-1-pre-chec
 | Core arguments | 2-5 main points |
 | Positions | Where illustrations add value |
 
-**CRITICAL**: Metaphors → visualize underlying concept, NOT literal image.
+**CRITICAL**: Metaphors �?visualize underlying concept, NOT literal image.
 
 Full procedures: [references/workflow.md](references/workflow.md#step-2-setup--analyze)
 
@@ -79,7 +79,7 @@ Full procedures: [references/workflow.md](references/workflow.md#step-2-setup--a
 | **Q1: Type** | [Recommended], infographic, scene, flowchart, comparison, framework, timeline, mixed |
 | **Q2: Density** | minimal (1-2), balanced (3-5), per-section (Recommended), rich (6+) |
 | **Q3: Style** | [Recommended], minimal-flat, sci-fi, hand-drawn, editorial, scene, Other |
-| Q4: Language | When article language ≠ EXTEND.md setting |
+| Q4: Language | When article language �?EXTEND.md setting |
 
 Full procedures: [references/workflow.md](references/workflow.md#step-3-confirm-settings-)
 
@@ -101,43 +101,50 @@ Full procedures: [references/workflow.md](references/workflow.md#step-3-confirm-
 
 **Method B - Direct Python call (universal)**:
 ```bash
-cd D:\zhishiku\.claude\skills\image
-python scripts/generate_image.py "<prompt>" -o "../output/{filename}"
-# Then move/copy to illustrations/{topic}/
+python "D:\data\images\Article-illustrations\gpt_image2_gen.py" \
+  "<prompt>" "D:\data\images\Article-illustrations\NN-{type}-{slug}.png" \
+  16:9 1k
 ```
 
-**Image skill location**: `D:\zhishiku\.claude\skills\image\`
-**Script**: `scripts/generate_image.py`
+**Method C - Batch generation**:
+```bash
+# 批量生成时，逐张调用
+for i in 1 2 3 4 5; do
+  python "D:\data\images\Article-illustrations\gpt_image2_gen.py" \
+    "$prompt_$i" "D:\data\images\Article-illustrations\0$i-{type}-{slug}.png" \
+    16:9 1k
+done
+```
+
+
 
 Full procedures: [references/workflow.md](references/workflow.md#step-4-generate-images)
 
-### Step 5: Finalize
+### Step 5: Finalize & Upload
 
-Insert `![description](path/NN-{type}-{slug}.png)` after paragraphs.
+图片生成后，自动通过 PicGo API 上传到图床，拿到外网 URL 再插入文章。
 
 ```
 Article Illustration Complete!
 Article: [path] | Type: [type] | Density: [level] | Style: [style]
-Images: X/N generated
+Images: X generated, X uploaded to PicGo
 ```
 
-### Step 6: Upload to PicList (Optional)
+**自动上传流程**:
+1. 每张图片生成后，立即通过 PicGo API 上传
+2. 拿到外网 URL 替换本地路径
+3. 最终插入文章的图片地址为外网 URL
 
-**For Obsidian users with PicList plugin** - 图片已生成到固定目录 `D:\data\images\image`
+```bash
+# PicGo 上传 API
+curl -X POST "http://127.0.0.1:36677/upload" \
+  -H "Content-Type: application/json" \
+  -H "X-PicGo-Token: <TOKEN>" \
+  -d '{"list": ["<图片绝对路径>"]}'
+# 返回: {"success": true, "result": ["<外网URL>"]}
+```
 
-**User workflow**:
-1. 图片自动保存到 `D:\data\images\image`
-2. 在 Obsidian 中手动插入图片路径
-3. PicList 自动监控并上传该目录
-4. 上传后自动替换本地路径为图床 URL
-
-**16:9 横图配置**: 在 EXTEND.md 中设置 `aspect_ratio: "16:9"`
-
-Full procedures: [references/workflow.md](references/workflow.md#step-7-upload-to-piclist-optional)
-
-**For 16:9 format preference**: Add to prompt `16:9 aspect ratio`
-
-Full procedures: [references/workflow.md](references/workflow.md#step-7-upload-to-piclist-optional)
+Full procedures: [references/workflow.md](references/workflow.md#step-5-finalize--upload)
 
 ## Output Directory
 
@@ -155,20 +162,33 @@ illustrations/{topic-slug}/
 
 | Action | Steps |
 |--------|-------|
-| Edit | Update prompt → Regenerate → Update reference |
-| Add | Position → Prompt → Generate → Insert |
-| Delete | Delete files → Remove reference |
+| Edit | Update prompt �?Regenerate �?Update reference |
+| Add | Position �?Prompt �?Generate �?Insert |
+| Delete | Delete files �?Remove reference |
 
 ## Local Environment Configuration
 
-**Image Generation Backend**: `image` skill (ModelScope 通义千问 API)
+**Image Generation Backend**: `gpt_image2_gen.py` (GPT-Image-2 via Apimart API)
 
 | Component | Path | Status |
 |-----------|-------|--------|
-| Image skill | `D:\zhishiku\.claude\skills\image\` | Configured |
-| API Config | `image/scripts/config.py` | API Key set |
-| Python Script | `image/scripts/generate_image.py` | Available |
+| 生图脚本 | `D:\data\images\Article-illustrations\gpt_image2_gen.py` | ✅ 已配置 |
+| API | Apimart (GPT-Image-2) | 内置 API Key |
+| 输出目录 | `D:\data\images\Article-illustrations\` | 固定输出目录 |
 
+**调用方式**:
+```bash
+python "D:\data\images\Article-illustrations\gpt_image2_gen.py" \
+  "<prompt>" "D:\data\images\Article-illustrations\NN-{type}-{slug}.png" \
+  16:9 1k
+```
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| prompt | 图片描述提示词 | 必填 |
+| output_path | 保存路径 | 必填 |
+| size | 画面比例 | `16:9`（`1:1`, `4:3`, `16:9` 可选） |
+| resolution | 分辨率 | `1k`（`2k`, `4k` 可选） |
 ### Environment-Specific Usage
 
 | Environment | Method | Command |
@@ -188,3 +208,4 @@ illustrations/{topic-slug}/
 | [references/styles.md](references/styles.md) | Style gallery |
 | [references/prompt-construction.md](references/prompt-construction.md) | Prompt templates |
 | [references/config/first-time-setup.md](references/config/first-time-setup.md) | First-time setup |
+

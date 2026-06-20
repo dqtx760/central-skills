@@ -69,6 +69,13 @@ options:
     description: "Friendly, approachable, personal"
 ```
 
+
+### Question 3: PicGo 图床配置
+
+
+
+If user selects "自定义", ask separately for server URL and token.
+
 ### Question 3: Save Location
 
 ```
@@ -99,7 +106,7 @@ options:
 
 ```yaml
 ---
-version: 1
+version: 2
 watermark:
   enabled: [true/false]
   content: "[user input or empty]"
@@ -110,6 +117,9 @@ preferred_style:
   description: ""
 language: null
 custom_styles: []
+picgo:
+  server: "http://127.0.0.1:36677"
+  token: ""
 ---
 ```
 

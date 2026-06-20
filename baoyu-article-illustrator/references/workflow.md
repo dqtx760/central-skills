@@ -278,20 +278,25 @@ Follow [prompt-construction.md](prompt-construction.md). Save to `prompts/illust
 
 ### 5.2 Select Generation Method
 
-**Detect environment and select appropriate method**:
+**固定使用 GPT-Image-2 后端**（通过 `gpt_image2_gen.py` 脚本调用）：
 
-| Environment | Method | Command |
-|------------|----------|----------|
-| **Claude Code** | Use `/image` skill | `/image "<prompt>" -o <path>` |
-| **Claudian/Obsidian** | Use Python script | `python D:\zhishiku\.claude\skills\image\scripts\generate_image.py "<prompt>" -o <path>` |
-| **Other/CMD** | Use Python script | `python <image-skill-path>/scripts/generate_image.py "<prompt>" -o <path>` |
+```bash
+python "D:\data\images\Article-illustrations\gpt_image2_gen.py" \
+  "<prompt>" "D:\data\images\Article-illustrations\NN-{type}-{slug}.png" \
+  16:9 1k
+```
 
-**Image skill location**: `D:\zhishiku\.claude\skills\image\`
-**Script path**: `image/scripts/generate_image.py`
+**参数说明**:
 
-**Important**: In non-Claude Code environments (like Obsidian Claudian), do NOT use slash commands. Use the Python script directly.
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| prompt | 图片描述提示词（必填） | — |
+| output_path | 输出文件路径（必填） | — |
+| size | 画面比例 | `16:9`（也可用 `1:1`, `4:3`） |
+| resolution | 分辨率 | `1k`（也可用 `2k`, `4k`） |
 
-If multiple image generation skills are available, ask user to choose.
+**注意**: 所有图片输出到固定目录 `D:\data\images\Article-illustrations\`，便于后续 PicGo 自动上传。
+
 
 ### 5.3 Process References ⚠️ REQUIRED if references saved in Step 1.0
 
@@ -333,46 +338,39 @@ Add: `Include a subtle watermark "[content]" at [position].`
 
 ### 5.5 Generate
 
-**For each illustration, use the appropriate command based on environment**:
+**使用 GPT-Image-2 统一生成**（不区分环境，所有环境都用同一个脚本）：
 
-**Claude Code environment**:
 ```bash
-/image "<prompt>" -o illustrations/{topic}/NN-{type}-{slug}.png
+# 生成单张图片
+python "D:\data\images\Article-illustrations\gpt_image2_gen.py" \
+  "<prompt>" "D:\data\images\Article-illustrations\NN-{type}-{slug}.png" \
+  16:9 1k
 ```
-
-**Claudian/Obsidian/Other environments** - **直接生成到 D:\data\images\image**:
-```bash
-# 方式1: 使用 image skill（如果有配置输出路径）
-cd D:\zhishiku\.claude\skills\image
-python scripts/generate_image.py "<prompt>" -o "D:/data/images/image/NN-{type}-{slug}.png"
-
-# 方式2: 如果需要16:9横图，添加尺寸参数
-python scripts/generate_image.py "<prompt>" -o "D:/data/images/image/NN-{type}-{slug}.png" -s 1024x576
-```
-
-**重要配置**:
-- **输出目录**: `D:\data\images\image` （固定路径，便于 PicList 监控）
-- **16:9横图**: 在 prompt 中添加 `16:9 aspect ratio` 或使用 `-s 1024x576`
 
 **Generation Steps**:
 1. For each illustration:
    - **Backup rule**: If image file exists, rename to `NN-{type}-{slug}-backup-YYYYMMDD-HHMMSS.png`
    - If references with `direct` usage: include reference info in prompt
-   - Generate image using appropriate command for environment
-   - **输出到固定目录**: `D:/data/images/image/`
-2. After each: "Generated X/N - 已保存到 D:/data/images/image/"
+   - Generate image using the GPT-Image-2 script
+   - **输出到固定目录**: `D:\data\images\Article-illustrations\`
+2. After each: `Generated X/N - 已保存到 D:\data\images\Article-illustrations\`
 3. On failure: retry once, then log and continue
 
----
+**16:9 尺寸建议**: 脚本默认 `16:9` + `1k` 分辨率，适合文章配图。如需更高分辨率用 `2k`。
 
-## Step 6: Finalize
 
-### 6.1 Update Article
+### 6.1 Update Article (with PicGo URLs)
 
-Insert after corresponding paragraph:
+插入图片时，使用 PicGo 上传后的外网 URL 替换本地路径。
+
 ```markdown
-![description](illustrations/{slug}/NN-{type}-{slug}.png)
+![description](https://图床URL/NN-{type}-{slug}.png)
 ```
+
+**URL 替换规则**：
+1. 从 Step 5.6 的上传映射表中查找每张图片的外网 URL
+2. 如果上传成功 → 使用外网 URL
+3. 如果上传失败（重试后仍失败）→ 使用本地路径作为 fallback，并在报告中标记
 
 Alt text: concise description in article's language.
 
@@ -395,55 +393,88 @@ Failed:
 - NN-zzz.png: [reason]
 ```
 
+
+### 5.6 Upload to PicGo (自动上传图床)
+
+每张图片生成后，立即通过 PicGo API 上传到图床，拿到外网 URL。
+
+**PicGo API 调用**:
+
+```bash
+# 上传单张图片到图床
+PICGO_SERVER="http://127.0.0.1:36677"
+PICGO_TOKEN=""  # 如果 PicGo 设置了 token，在这里填写
+
+# 调用上传 API
+curl -X POST "${PICGO_SERVER}/upload" \
+  -H "Content-Type: application/json" \
+  ${PICGO_TOKEN:+-H "X-PicGo-Token: $PICGO_TOKEN"} \
+  -d "{"list": ["$IMAGE_PATH"]}"
+
+# 成功返回: {"success": true, "result": ["https://图床URL/图片.png"]}
+```
+
+**上传流程**:
+
+1. 每张图片生成后，记录其**绝对路径**（如 `D:\data\images\Article-illustrations-infographic-concept.png`）
+2. 调用 PicGo API 上传该路径
+3. 解析返回结果，提取外网 URL：
+   ```bash
+   # 从响应中提取 URL
+   response=$(curl -s -X POST "${PICGO_SERVER}/upload" ...)
+   url=$(echo $response | python3 -c "import sys,json; print(json.load(sys.stdin)['result'][0])")
+   ```
+4. 保存 `本地路径 → 外网URL` 的映射表，供 Step 6 使用
+5. 如果上传失败，重试一次；仍失败则保留本地路径，在最终报告中标记
+
+**配置来源**（优先级从高到低）：
+1. EXTEND.md 中的 `picgo_server` 和 `picgo_token` 字段
+2. 默认值：`http://127.0.0.1:36677`，无 Token
+
+**上传映射表示例**：
+```
+Upload Mapping:
+  01-infographic-concept.png → https://img.example.com/01-infographic-concept.png  ✓
+  02-scene-atmosphere.png    → https://img.example.com/02-scene-atmosphere.png     ✓
+```
+
 ---
 
-## Step 7: Upload to PicList (Optional)
 
-### 7.1 Check User Preference
+---
 
-Check EXTEND.md for PicList auto-upload setting:
+## Step 7: PicGo 配置检测
+
+### 7.1 检查 PicGo 服务状态
+
+在生成图片前，检查 PicGo 服务是否可用：
+
+```bash
+# 检查 PicGo 服务是否在监听
+curl -s --connect-timeout 3 "http://127.0.0.1:36677/" > /dev/null 2>&1 && \
+  echo "PICGO_AVAILABLE=true" || echo "PICGO_AVAILABLE=false"
+```
+
+| 结果 | 行为 |
+|------|------|
+| 可用 | 自动上传所有生成的图片 |
+| 不可用 | 跳过上传，使用本地路径，报告末尾提示启动 PicGo |
+
+### 7.2 EXTEND.md 配置模板
 
 ```yaml
 ---
-piclist_upload:
-  enabled: true    # 自动触发上传流程
-  method: clipboard  # clipboard(复制链接) | hotkey(模拟按键)
+picgo_server: "http://127.0.0.1:36677"
+picgo_token: ""         # 如果 PicGo 设置了 token，填在这里
 ---
 ```
 
-### 7.2 Upload Images with PicList
+### 7.3 故障处理
 
-**由于图片直接生成到 `D:\data\images\image`，PicList 会自动监控该目录**
+| 问题 | 处理 |
+|------|------|
+| 上传失败（网络） | 重试 1 次，仍失败则 fallback 到本地路径 |
+| 上传失败（鉴权） | 检查 `picgo_token` 是否与 PicGo 设置一致 |
+| 返回 `success: false` | 输出 PicGo 错误信息，保留本地路径 |
+| PicGo 未运行 | 提示用户启动 PicGo，继续生图（不上传） |
 
-**User workflow**:
-1. 图片生成后自动保存到 `D:\data\images\image`
-2. 在 Obsidian 中手动插入图片路径
-3. PicList 自动检测并上传 `D:\data\images\image` 中的新文件
-4. 上传后自动替换本地路径为图床 URL
-
-### 7.3 Instructions for User
-
-**完整配图流程**:
-```
-1. 生成图片 → 保存到 D:\data\images\image
-                    ↓
-2. 在文章中手动插入图片路径
-                    ↓
-3. PicList 自动上传 / 手动 Ctrl+Shift+J
-                    ↓
-4. PicList 替换本地路径为图床链接
-```
-
-**重要提示**:
-- 图片保存在固定目录 `D:\data\images\image`
-- PicList 插件会自动监控并上传该目录
-- 上传后自动替换文章中的本地路径为图床 URL
-
-### 7.4 Alternative: Direct 16:9 Format
-
-If user prefers 16:9 format, generate with aspect ratio:
-
-```bash
-# In prompt, add: "16:9 aspect ratio"
-# Or use -s parameter: -s 1024x576
-```
