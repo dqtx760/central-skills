@@ -1,9 +1,0 @@
-# 鉴权 cookie —— 等同于登录态，绝不提交
-.env
-
-# 生图产物
-assets/generated/
-
-# Python
-__pycache__/
-*.pyc

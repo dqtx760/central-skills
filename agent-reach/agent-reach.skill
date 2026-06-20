@@ -1,7 +1,0 @@
-{
-  "name": "agent-reach",
-  "description": "给AI Agent提供全网访问能力，支持访问YouTube/推特/小红书/知乎/B站等平台，网页抓取、全网搜索、内容自动提取清洗",
-  "version": "1.0.0",
-  "author": "Panniantong",
-  "tags": ["web", "search", "scraping", "internet", "agent"]
-}
