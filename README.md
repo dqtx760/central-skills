@@ -76,6 +76,21 @@ skills/
 | **gsap** | GSAP动画参考（HyperFrames�?| `/gsap` |
 | **impeccable** | 前端UI设计/重构/打磨 | `/impeccable` |
 | **remotion-to-hyperframes** | Remotion项目迁移 | `/remotion-to-hyperframes` |
+| **archimate** | Create ArchiMate enterprise architecture diagrams using PlantUML stdlib macros | `/archimate` |
+| **architecture** | Create layered system architecture diagrams using HTML/CSS templates with color-coded tiers and grid layouts | `/architecture` |
+| **bpmn** | Create business process diagrams using PlantUML syntax with BPMN, EIP, and Lean Mapping stencil icons | `/bpmn` |
+| **canvas** | Create spatial diagrams with free-positioned nodes using JSON format | `/canvas` |
+| **cloud** | Create cloud provider architecture diagrams using PlantUML syntax with official AWS, Azure, GCP, and Alibaba Cloud service icons | `/cloud` |
+| **data-analytics** | Create data pipeline and analytics architecture diagrams using PlantUML syntax with database/analytics stencil icons | `/data-analytics` |
+| **graphviz** | Create directed/undirected graphs using DOT language with automatic layout | `/graphviz` |
+| **infocard** | Create editorial-style information cards using HTML/CSS in Markdown | `/infocard` |
+| **infographic** | Create template-based infographics with space-separated key-value syntax (NOT YAML) | `/infographic` |
+| **iot** | Create IoT architecture diagrams using PlantUML syntax with device and sensor stencil icons | `/iot` |
+| **mindmap** | Create hierarchical mind maps using PlantUML @startmindmap syntax | `/mindmap` |
+| **network** | Create network topology diagrams using PlantUML syntax with mxgraph device icons (Cisco, Citrix, etc.) | `/network` |
+| **security** | Create security architecture diagrams using PlantUML syntax with identity, encryption, firewall, and compliance stencil icons | `/security` |
+| **uml** | Create UML diagrams using PlantUML syntax | `/uml` |
+| **vega** | Create data-driven charts with Vega-Lite (declarative) and Vega (programmatic) | `/vega` |
 
 ### 🤖 自动化与管理
 
@@ -136,9 +151,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：41**
+**当前技能数量：56**
 
-> 最后更新：2026-06-19
+> 最后更新：2026-06-27
 > 维护者：@dqtx760
 
 
