@@ -31,6 +31,7 @@ skills/
 | **huashu-proofreading** | 三遍审校降低AI检测率 | `/huashu-proofreading 审校一下` |
 | **huashu-topic-gen** | 快速生成选题方向 | `/huashu-topic-gen` |
 | **content-topic-generator** | 多角度选题延伸 | `/content-topic-generator` |
+| **comment-topics** | 抓取社交平台评论并生成短视频/文章选题脚本 | `/comment-topics` |
 | **xiaohongshu-converter** | 文章转小红书风格 | `/xiaohongshu-converter` |
 | **demand-trigger-script** | 需求引爆点高转化短视频脚本 | /demand-trigger-script |
 | **khazix-writer** | 写作助手 | `/khazix-writer` |
@@ -151,7 +152,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：56**
+**当前技能数量：57**
 
 > 最后更新：2026-06-27
 > 维护者：@dqtx760
