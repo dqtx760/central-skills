@@ -59,6 +59,7 @@ skills/
 | 技�?| 描述 | 用法 |
 |------|------|------|
 | **aihot** | AI行业资讯日报 | `/aihot` 或「今天AI圈有什么�?|
+| **follow-builders** | AI builders digest，追踪 X 和 YouTube 播客上的 AI 建设者动态 | `/follow-builders` 或 `/ai` |
 | **agent-reach** | 社媒数据抓取脚手�?| `/agent-reach` |
 | **web-access** | 网页内容访问 | `/web-access` |
 | **find-skills** | 发现和安装新技�?| `/find-skills` |
@@ -152,7 +153,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：57**
+**当前技能数量：58**
 
 > 最后更新：2026-06-27
 > 维护者：@dqtx760
