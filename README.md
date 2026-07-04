@@ -110,6 +110,11 @@ skills/
 | **x-post** | X/Twitter 发帖 | `/x-post` |
 | **xiaohongshu-cli** | 小红书全操作CLI | `/xiaohongshu-cli` |
 | **lark-im** | 飞书集成 | `/lark-im` |
+| **zsxq-group** | 知识星球管理：列出星球、浏览主题、查询标签、搜索成员 | `/zsxq-group` |
+| **zsxq-topic** | 知识星球主题管理：搜索、查看、发布、编辑、评论和回答主题 | `/zsxq-topic` |
+| **zsxq-note** | 知识星球公开笔记管理：创建、编辑、查看和删除笔记 | `/zsxq-note` |
+| **zsxq-user** | 知识星球用户信息：查看个人资料和发帖足迹 | `/zsxq-user` |
+| **zsxq-shared** | 知识星球认证、诊断、通用 API 和安全规则 | `/zsxq-shared` |
 
 ## 🔗 �?Agent 同步
 
@@ -153,7 +158,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：58**
+**当前技能数量：63**
 
 > 最后更新：2026-06-27
 > 维护者：@dqtx760
