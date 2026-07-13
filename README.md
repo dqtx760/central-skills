@@ -1,4 +1,4 @@
-﻿# 🧠 Central Skills 中央技能仓�?
+# 🧠 Central Skills 中央技能仓�?
 > 一次安装，所�?AI Agent 通用�?>
 > 管理 Claude Code、Codex、Qwen、Gemini CLI、Reasonix、WorkBuddy �?6 �?Agent 的共享技能库�?
 ## 📦 快速开�?
@@ -116,6 +116,39 @@ skills/
 | **zsxq-user** | 知识星球用户信息：查看个人资料和发帖足迹 | `/zsxq-user` |
 | **zsxq-shared** | 知识星球认证、诊断、通用 API 和安全规则 | `/zsxq-shared` |
 
+
+### 🧩 dbskill 商业工具箱
+| 技能 | 描述 | 用法 |
+|------|------|------|
+| **dbs** | dontbesilent 商业工具箱主入口，自动路由当前任务 | `/dbs` |
+| **dbs-diagnosis** | 商业模式、产品、定价和客户诊断 | `/dbs-diagnosis` |
+| **dbs-benchmark** | 寻找和分析值得研究的对标 | `/dbs-benchmark` |
+| **dbs-content** | 内容方向与创作做法诊断 | `/dbs-content` |
+| **dbs-hook** | 短视频开头优化 | `/dbs-hook` |
+| **dbs-xhs-title** | 小红书标题公式 | `/dbs-xhs-title` |
+| **dbs-resonate** | 文稿共鸣诊断 | `/dbs-resonate` |
+| **dbs-script-flow** | 逐字稿结构与表达检查 | `/dbs-script-flow` |
+| **dbs-ai-check** | AI 写作特征识别 | `/dbs-ai-check` |
+| **dbs-wechat-html** | 微信公众号 HTML 生成 | `/dbs-wechat-html` |
+| **dbs-spread** | 传播心理与内容扩散分析 | `/dbs-spread` |
+| **dbs-content-system** | 把大量素材搭成内容资产工程 | `/dbs-content-system` |
+| **dbs-deconstruct** | 概念拆解与问题澄清 | `/dbs-deconstruct` |
+| **dbs-goal** | 目标清晰化 | `/dbs-goal` |
+| **dbs-good-question** | 好问题生成器 | `/dbs-good-question` |
+| **dbs-action** | 行动受阻与执行力诊断 | `/dbs-action` |
+| **dbs-slowisfast** | 找长期更快的慢方法 | `/dbs-slowisfast` |
+| **dbs-decision** | 决策记录与回填系统 | `/dbs-decision` |
+| **dbs-save** | 保存当前诊断状态 | `/dbs-save` |
+| **dbs-restore** | 恢复上次诊断状态 | `/dbs-restore` |
+| **dbs-report** | 汇总多次存档生成报告 | `/dbs-report` |
+| **dbs-learning** | 交互式学习与反馈迭代 | `/dbs-learning` |
+| **dbs-chatroom** | 多角色定向聊天室 | `/dbs-chatroom` |
+| **dbs-chatroom-austrian** | 奥派经济学聊天室 | `/dbs-chatroom-austrian` |
+| **dbs-agent-migration** | 多端 Agent 工作台迁移 | `/dbs-agent-migration` |
+| **dbs-bridge** | Skill 或 skills 目录多端桥接 | `/dbs-bridge` |
+| **dbs-skill-cleaner** | 本地 skill 风险扫描与隔离建议 | `/dbs-skill-cleaner` |
+| **dbs-update** | 更新 dbskill 官方技能 | `/dbs-update` |
+
 ## 🔗 �?Agent 同步
 
 ### 方案一：Junction 链接（推荐）
@@ -158,9 +191,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：63**
+**当前技能数量：91**
 
-> 最后更新：2026-06-27
+> 最后更新：2026-07-13
 > 维护者：@dqtx760
 
 
