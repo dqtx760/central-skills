@@ -115,6 +115,7 @@ skills/
 | **zsxq-note** | 知识星球公开笔记管理：创建、编辑、查看和删除笔记 | `/zsxq-note` |
 | **zsxq-user** | 知识星球用户信息：查看个人资料和发帖足迹 | `/zsxq-user` |
 | **zsxq-shared** | 知识星球认证、诊断、通用 API 和安全规则 | `/zsxq-shared` |
+| **wechat-sender** | 自动发送微信文本、图片、文件和语音消息 | `/wechat-sender` |
 
 
 ### 🧩 dbskill 商业工具箱
@@ -191,9 +192,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：91**
+**当前技能数量：92**
 
-> 最后更新：2026-07-13
+> 最后更新：2026-07-18
 > 维护者：@dqtx760
 
 
