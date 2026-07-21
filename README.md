@@ -116,7 +116,6 @@ skills/
 | **zsxq-user** | 知识星球用户信息：查看个人资料和发帖足迹 | `/zsxq-user` |
 | **zsxq-shared** | 知识星球认证、诊断、通用 API 和安全规则 | `/zsxq-shared` |
 | **wechat-sender** | 自动发送微信文本、图片、文件和语音消息 | `/wechat-sender` |
-| **yichen-wecom-local-vault** | 企业微信本地数据库解析与导出 | `/yichen-wecom-local-vault` |
 
 
 ### 🧩 dbskill 商业工具箱
@@ -193,7 +192,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：93**
+**当前技能数量：92**
 
 > 最后更新：2026-07-21
 > 维护者：@dqtx760
