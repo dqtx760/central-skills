@@ -1,10 +1,6 @@
 ---
 name: dbs-decision
-description: |
-  dontbesilent 个人决策系统。把任何一个需要长期跟踪的领域（业务、关系、健康、职业、学习、投资……）做成一个本地知识工程：四层结构、来源标签、写完不改的快照、能炼出规律的概念库。
-  触发方式：/dbs-decision、/决策系统、/决策立案、/结果回填、/状态画像
-  Personal decision system. Turns any long-running domain into a local knowledge project with four layers, source tags, immutable snapshots, and a concept library that learns patterns over time.
-  Trigger: /dbs-decision, /决策系统, /决策立案, /结果回填, /状态画像
+description: 把需要长期跟踪的业务、关系、健康、职业、学习或投资问题建成本地决策知识工程。用户要求决策立案、结果回填、状态画像或长期复盘时使用。
 ---
 
 # dbs-decision：个人决策系统
@@ -303,12 +299,12 @@ description: |
 
 ---
 
-## 不知道下一步用哪个 skill？
+## 不知道下一步用哪个 Skill？
 
 输入 `/dbs`。
 
-这是商业工具箱的导航入口。它会读取刚才的具体结论，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
 
-你也可以直接说你想做什么——比如「我想找对标」「这个概念帮我拆一下」——`/dbs` 会路由到对应的 skill。
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
 
-不熟悉所有 skill 没关系，迷路了就回 `/dbs`。
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。

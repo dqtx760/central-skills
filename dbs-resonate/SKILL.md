@@ -1,10 +1,6 @@
 ---
 name: dbs-resonate
-description: |
-  文稿共鸣诊断。你写完了一段内容但心里没底——怕没流量、怕没戳中观众、怕完播率低。把文稿给这个 skill，它用传播心理学框架诊断有没有引起共鸣、哪里出了问题、具体怎么改。
-  触发方式：/dbs-resonate、「这个文稿有没有戳中人」「帮我看看能不能发」「这个完播率会不会低」「文稿发出去有没有流量」
-  Draft resonance diagnosis. You finished a draft but aren't sure it will connect. Diagnoses psychological resonance issues and gives specific fixes.
-  Trigger: /dbs-resonate, "will this resonate", "check my draft", "will people watch this"
+description: 用传播心理学框架诊断文稿能否引起共鸣、问题位置和修改方向。用户担心内容没流量、没戳中观众、完播率低或不确定能否发布时使用。
 ---
 
 # dbs-resonate：文稿共鸣诊断
@@ -21,9 +17,9 @@ description: |
 - 给出具体的删改建议（删什么、保留什么、强化什么）
 
 **不做**：
-- 预测平台算法表现（完播率、点击率数字）—— 那由 `/dbs-hook` 和 `/全平台标题` 处理
+- 预测平台算法表现（完播率、点击率数字）——超出本 skill 边界。保留用户材料，交回 `/dbs` 判断专项入口
 - 检查结构是否完整（是否缺少什么部分）—— 那是另一类问题
-- 分析已验证的内容为什么能火 —— 那是 `/dbs-spread` 做的事
+- 分析已验证的内容为什么能火——属于相邻能力范围。保留用户材料，交回 `/dbs` 判断入口
 
 ---
 
@@ -160,12 +156,12 @@ description: |
 
 ---
 
-## 不知道下一步用哪个 skill？
+## 不知道下一步用哪个 Skill？
 
 输入 `/dbs`。
 
-这是商业工具箱的导航入口。它会读取刚才的具体结论，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
 
-你也可以直接说你想做什么——比如「我想找对标」「这个概念帮我拆一下」——`/dbs` 会路由到对应的 skill。
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
 
-不熟悉所有 skill 没关系，迷路了就回 `/dbs`。
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。

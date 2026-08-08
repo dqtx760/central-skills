@@ -1,10 +1,6 @@
 ---
 name: dbs-content-system
-description: |
-  dontbesilent 内容结构化系统。把本地大量文稿、推文、选题、案例和课程稿搭成一个可持续生长的内容结构化工程：先审计内容规模与边界，再建立新工程、复制素材、抽取内容单元、生成主题地图与选题装配稿。
-  触发方式：/dbs-content-system、/内容结构化系统、「把我的内容做成结构化系统」「把本地素材变成可重组系统」「帮我搭内容资产工程」「我想把旧内容变成可复用资产」
-  Content structuring system. Audits local content volume, then builds a reusable content knowledge project with units, topic maps, and assembly drafts.
-  Trigger: /dbs-content-system, "build a content structuring system", "turn my archive into reusable assets"
+description: 把本地文稿、推文、选题、案例和课程稿整理成可持续生长、可重组复用的内容工程。用户要求结构化内容资产、整理旧素材或建立主题地图时使用。
 ---
 
 # dbs-content-system：内容结构化系统
@@ -115,7 +111,7 @@ description: |
 - 已经不缺灵感，缺的是旧内容调用效率
 - 明确提到「内容结构化系统」「内容资产工程化」「内容单元」「主题地图」「选题装配」
 
-如果用户只是想改一篇内容，转到 `/dbs-content`、`/dbs-hook`、`/dbs-xhs-title` 或 `/dbs-ai-check`。
+如果用户只想改一篇内容，说明当前请求超出内容工程边界，保留用户已经提供的文稿和目标，再交回 `/dbs` 根据具体任务判断入口。不要由本 skill 直接选择下一个 Skill。
 
 ---
 
@@ -545,12 +541,12 @@ description: |
 
 ---
 
-## 不知道下一步用哪个 skill？
+## 不知道下一步用哪个 Skill？
 
 输入 `/dbs`。
 
-这是商业工具箱的导航入口。它会读取刚才的具体结论，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
 
-你也可以直接说你想做什么——比如「我想找对标」「这个概念帮我拆一下」——`/dbs` 会路由到对应的 skill。
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
 
-不熟悉所有 skill 没关系，迷路了就回 `/dbs`。
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。

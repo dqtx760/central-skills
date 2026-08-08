@@ -1,10 +1,6 @@
 ---
 name: dbs-chatroom-austrian
-description: |
-  哈耶克 × 米塞斯 × Claude 三人对话。奥派经济学视角的多角色讨论。
-  触发方式：/dbs-chatroom-austrian、/chatroom-austrian、/奥派、「奥派聊天室」
-  Austrian economics chatroom. Hayek × Mises × Claude debate.
-  Trigger: /dbs-chatroom-austrian, /chatroom-austrian, /奥派, "Austrian chat"
+description: 由哈耶克、米塞斯与 Claude 从奥派经济学视角展开多角色讨论。用户要求进入奥派聊天室或用奥派分析问题时使用。
 ---
 
 # dbs-chatroom-austrian：奥派经济聊天室
@@ -168,12 +164,12 @@ Claude说：{之前总结}
 
 ---
 
-## 不知道下一步用哪个 skill？
+## 不知道下一步用哪个 Skill？
 
 输入 `/dbs`。
 
-这是商业工具箱的导航入口。它会读取刚才的具体结论，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
 
-你也可以直接说你想做什么——比如「我想找对标」「这个概念帮我拆一下」——`/dbs` 会路由到对应的 skill。
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
 
-不熟悉所有 skill 没关系，迷路了就回 `/dbs`。
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。

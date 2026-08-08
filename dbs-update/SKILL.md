@@ -1,8 +1,6 @@
 ---
 name: dbs-update
-description: |
-  dbskill 更新器。用户说「更新 dbskill」「升级 dbskill」「把 dbskill 更新到最新版」「检查 dbskill 更新」或输入 /dbs-update 时使用。只同步 dontbesilent2025/dbskill，不更新用户安装的其他 Skill，不修改用户的 dbskill 存档。
-  Update dbskill when the user asks to update, upgrade, or check updates for dbskill.
+description: 更新官方 dbskill，并保留其他 Skill 与用户存档。用户要求更新、升级或检查 dbskill 版本时使用。
 ---
 
 # dbs-update：更新 dbskill
@@ -43,3 +41,15 @@ description: |
 - 用户只问版本、更新内容或是否需要更新时，先回答问题，不执行命令。
 - 用户明确要求检查更新且希望实际同步时，按本 Skill 更新。
 - 不使用 `npx skills update`，该命令可能更新用户安装的其他 Skill。
+
+---
+
+## 不知道下一步用哪个 Skill？
+
+更新任务完成、当前 Agent 已经重新读取新能力后，输入 `/dbs`。
+
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
+
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。

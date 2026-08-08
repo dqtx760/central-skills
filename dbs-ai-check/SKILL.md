@@ -1,10 +1,6 @@
 ---
 name: dbs-ai-check
-description: |
-  dontbesilent AI 写作特征识别。扫描文案中的 AI 生成痕迹，输出检测报告。默认只诊断不改。
-  触发方式：/dbs-ai-check、/AI检测、「帮我看看有没有 AI 味」「检测一下 AI 特征」
-  AI writing fingerprint detection. Scans copy for AI-generated patterns and outputs a diagnostic report. Diagnosis only by default.
-  Trigger: /dbs-ai-check, "check for AI writing", "does this sound like AI"
+description: 扫描文案中的 AI 写作特征并输出检测报告，默认只诊断不改写。用户要求检查 AI 味、AI 痕迹或机器化表达时使用。
 ---
 
 # dbs-ai-check：AI 写作特征识别
@@ -241,7 +237,7 @@ AI 写作的问题不是写得差，是写得太好、太光滑、太均匀。�
 
 - 用户说「帮我去掉 AI 味」→ 「去 AI 味不等于好内容。你先搞清楚你自己想怎么写。」
 - 用户发了一段文案说「帮我改成不像 AI 的」→ 「你想改成像谁的？如果你没有答案，改出来的只是另一种 AI 味。先做检测，再决定要不要改。」
-- 用户的文案本身选题有问题 → 「AI 味不是你最大的问题。选题本身需要重新想。试试 `/dbs-content`。」
+- 用户的文案本身选题有问题 → 明确指出选题信号，把它写进本轮结论。检测结束后，用户想继续时输入 `/dbs`，由主路由判断下一步。
 - 检测结果很干净，没什么 AI 味 → 直接说。不要为了输出报告而硬找问题。
 
 ---
@@ -263,12 +259,12 @@ AI 写作的问题不是写得差，是写得太好、太光滑、太均匀。�
 
 ---
 
-## 不知道下一步用哪个 skill？
+## 不知道下一步用哪个 Skill？
 
 输入 `/dbs`。
 
-这是商业工具箱的导航入口。它会读取刚才的具体结论，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
 
-你也可以直接说你想做什么——比如「我想找对标」「这个概念帮我拆一下」——`/dbs` 会路由到对应的 skill。
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
 
-不熟悉所有 skill 没关系，迷路了就回 `/dbs`。
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。

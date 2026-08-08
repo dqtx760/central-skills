@@ -149,6 +149,8 @@ skills/
 | **dbs-bridge** | Skill 或 skills 目录多端桥接 | `/dbs-bridge` |
 | **dbs-skill-cleaner** | 本地 skill 风险扫描与隔离建议 | `/dbs-skill-cleaner` |
 | **dbs-update** | 更新 dbskill 官方技能 | `/dbs-update` |
+| **dbs-knowledge** | 把本地文件夹建成 Agent 可检索、收录和维护的知识库 | `/dbs-knowledge` |
+| **dbs-standard-answer** | 从历史同构案例中提炼带条件的标准答案 | `/dbs-standard-answer` |
 
 ## 🔗 �?Agent 同步
 
@@ -192,10 +194,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：92**
+**当前技能数量：94**
 
 > 最后更新：2026-07-21
 > 维护者：@dqtx760
-
 
 

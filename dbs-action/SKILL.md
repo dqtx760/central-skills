@@ -1,10 +1,6 @@
 ---
 name: dbs-action
-description: |
-  dontbesilent 执行力诊断。用阿德勒心理学框架诊断你「知道该做什么但就是不做」的真正原因。
-  触发方式：/dbs-action、/action、「我知道该怎么做但就是不做」「为什么我总是拖延」
-  Execution block diagnosis using Adlerian psychology framework.
-  Trigger: /dbs-action, "I know what to do but can't do it", "why do I procrastinate"
+description: 用阿德勒心理学框架诊断执行阻滞。用户知道该做什么却迟迟不做、反复拖延或行动中断时使用。
 ---
 
 # dbs-action：执行力诊断
@@ -189,10 +185,6 @@ description: |
 
 ---
 
-> 📚 深度参考：知识库/Skill知识包/action_心理诊断框架.md、知识库/Skill知识包/action_信号案例库.md
-
----
-
 ## 内联案例库
 
 ### 典型案例
@@ -225,7 +217,7 @@ description: |
 
 执行力诊断里挖出来的「真实目的」尤其值得存——下次再卡住时可以直接对照：
 
-> 你今天发现的反向动力和真实目的，输入 `/dbs-save` 存档。下次再卡住，`/dbs-restore` 把它拉出来对照——很多时候你不是又卡了，是同一个反向动力换了个壳。
+> 这次分析完成后，如果你想保存结论或继续推进，输入 `/dbs`。它会读取本轮结果和你的明确目标，判断当前该做什么。
 
 只在用户已经接受诊断结论时提，用户还在抗拒的时候不要提。
 
@@ -239,12 +231,12 @@ description: |
 
 ---
 
-## 不知道下一步用哪个 skill？
+## 不知道下一步用哪个 Skill？
 
 输入 `/dbs`。
 
-这是商业工具箱的导航入口。它会读取刚才的具体结论，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
+这是商业工具箱的导航入口。它会读取刚才的具体结论和你的最新目标，选择当前最值得处理的一个方向，并直接路由到对应 Skill。
 
-你也可以直接说你想做什么——比如「我想找对标」「这个概念帮我拆一下」——`/dbs` 会路由到对应的 skill。
+你也可以直接说你想做什么。`/dbs` 会尊重你的明确选择。
 
-不熟悉所有 skill 没关系，迷路了就回 `/dbs`。
+不熟悉所有 Skill 没关系，下一步不确定时就回 `/dbs`。
