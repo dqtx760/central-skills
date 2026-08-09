@@ -1,0 +1,4 @@
+interface:
+  display_name: "Advisor 编排"
+  short_description: "Luna 主控，Terra 常规，Sol 复杂与规划审查"
+  default_prompt: "使用 Advisor 编排完成此任务：先理解和分流，再由子代理实现、独立审查并由主会话验收。"

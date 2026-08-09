@@ -63,6 +63,7 @@ skills/
 | **agent-reach** | 社媒数据抓取脚手�?| `/agent-reach` |
 | **web-access** | 网页内容访问 | `/web-access` |
 | **find-skills** | 发现和安装新技�?| `/find-skills` |
+| **采集** | 采集短视频评论并AI分析用户痛点和内容选题 | `/采集 <短视频链接>` |
 
 ### 🎬 音视频处�?
 | 技�?| 描述 | 用法 |
@@ -194,7 +195,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：94**
+**当前技能数量：95**
 
 > 最后更新：2026-07-21
 > 维护者：@dqtx760
