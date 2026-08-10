@@ -45,6 +45,8 @@ skills/
 | **ian-xiaohei-illustrations** | KATONG风格正文配图 | `/ian-xiaohei-illustrations 配图` |
 | **baoyu-article-illustrator** | 文章配图策划与生�?| `/baoyu-article-illustrator` |
 | **cover-generator** | 自动生成高点击率封面 Prompt�?6:9�?:16双尺�?| `/cover-generator` |
+| **scene-distillation-zine-v1-3** | 照片转极简艺术Zine海报（纯插画重构） | `/scene-distillation-zine-v1-3` |
+| **scenes-gathered-zine-v1-3** | 照片转竖版Zine海报（摄影+抽象插画融合） | `/scenes-gathered-zine-v1-3` |
 | **ljg-card** | 内容转PNG视觉卡片 | `/ljg-card` |
 
 ### 📊 演示与幻灯片
@@ -195,9 +197,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：95**
+**当前技能数量：97**
 
-> 最后更新：2026-07-21
+> 最后更新：2026-08-10
 > 维护者：@dqtx760
 
 
