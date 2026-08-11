@@ -26,7 +26,7 @@ Create Excalidraw diagrams from text content with multiple output formats.
 3. Choose diagram type (see Diagram Types below)
 4. Generate Excalidraw JSON (add animation order if Animated mode)
 5. Output in correct format based on mode
-6. **Automatically save to D:/zhishiku/AIGC/可视化/ 目录**
+6. **Automatically save to D:/project2026/fuwari/src/content/01-输入/visual 目录**
 7. Notify user with file path and usage instructions
 
 ## Output Formats
@@ -392,8 +392,8 @@ See [references/excalidraw-schema.md](references/excalidraw-schema.md) for all e
 - 优先使用中文以提高清晰度
 
 #### 3. 使用 Write 工具自动保存文件
-- **保存位置**：默认保存到 D:/zhishiku/AIGC/可视化/ 目录
-- **完整路径**：`D:/zhishiku/AIGC/可视化/[filename].md`
+- **保存位置**：默认保存到 D:/project2026/fuwari/src/content/01-输入/visual 目录
+- **完整路径**：`D:/project2026/fuwari/src/content/01-输入/visual/[filename].md`
 - 这样可以实现灵活迁移，无需硬编码路径
 
 #### 4. 确保 Markdown 结构完全正确

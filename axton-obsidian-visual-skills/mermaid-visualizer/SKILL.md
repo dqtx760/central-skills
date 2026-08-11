@@ -18,7 +18,7 @@ When creating a Mermaid diagram:
 3. **Select configuration** - Determine layout, detail level, and styling
 4. **Generate diagram** - Create syntactically correct Mermaid code
 5. **自动保存文件** - 将Mermaid代码保存到文件中
-   - **保存位置**：D:/zhishiku/AIGC/可视化/ 目录
+   - **保存位置**：D:/project2026/fuwari/src/content/01-输入/visual 目录
    - **文件名格式**：`[主题].mermaid.md`，比如 `工作流程.mermaid.md`
 6. **Output in markdown** - Wrap in proper code fence with optional explanation，同时告知用户文件保存位置
 

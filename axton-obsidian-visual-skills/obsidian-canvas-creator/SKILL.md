@@ -108,7 +108,7 @@ Before outputting:
 - Complete, valid JSON Canvas file
 - No additional explanation text
 - Directly importable into Obsidian
-- **保存位置**：默认保存到 D:/zhishiku/AIGC/可视化/ 目录
+- **保存位置**：默认保存到 D:/project2026/fuwari/src/content/01-输入/visual 目录
 - **文件名格式**：`[主题].canvas`，比如 `太阳系思维导图.canvas`
 
 ## Node Sizing Guidelines
