@@ -3,17 +3,12 @@
 采集_comments.py — 短视频评论采集工具
 用法: python 采集_comments.py <短视频链接>
 输出: 同目录下 comments_{video_id}_{timestamp}.txt
+支持抖音短链接(v.douyin.com)和完整链接(www.douyin.com/video/xxx)
 """
 
 import re, sys, time, random
 from datetime import datetime
 from pathlib import Path
-
-def parse_douyin_url(text: str) -> str | None:
-    ok = re.search(r'video/(\d{19})', text)
-    if ok: return ok.group(1)
-    ok = re.search(r'(\d{19})', text)
-    return ok.group(1) if ok else None
 
 try:
     from playwright.sync_api import sync_playwright, TimeoutError as PwTimeout
@@ -22,6 +17,38 @@ except ImportError:
     sys.exit(1)
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+def _extract_video_id(text: str) -> str | None:
+    """从文本中提取19位视频ID"""
+    ok = re.search(r'video/(\d{19})', text)
+    if ok: return ok.group(1)
+    ok = re.search(r'modal_id=(\d{19})', text)
+    if ok: return ok.group(1)
+    ok = re.search(r'(\d{19})', text)
+    return ok.group(1) if ok else None
+
+def _resolve_short_link(ctx, short_url: str) -> str | None:
+    """通过 Playwright 访问短链接，获取重定向后的真实URL中的视频ID"""
+    page = ctx.new_page()
+    try:
+        page.goto(short_url, wait_until="domcontentloaded", timeout=15000)
+        time.sleep(2)
+        final_url = page.url or ""
+        print(f"  解析到: {final_url[:100]}")
+        vid = _extract_video_id(final_url)
+        if vid:
+            return vid
+        # 某些短链接会跳转到 note 页面，尝试从页面获取
+        vid2 = page.evaluate("""() => {
+            const m = location.href.match(/\/(\d{19})/);
+            return m ? m[1] : null;
+        }""")
+        return vid2
+    except Exception as e:
+        print(f"  短链接解析异常: {e}")
+        return None
+    finally:
+        page.close()
 
 def _fetch_comments(page, video_id, max_pages=30):
     """通过平台公开接口获取评论数据"""
@@ -80,11 +107,16 @@ def main():
     if len(sys.argv) < 2:
         print("用法: python 采集_comments.py <短视频链接>")
         sys.exit(1)
-    url = sys.argv[1]
-    video_id = parse_douyin_url(url)
-    if not video_id:
-        print("无法解析视频ID")
-        sys.exit(1)
+    raw_input = sys.argv[1]
+    
+    # 提取URL（从分享文本中提取）
+    url_match = re.search(r'https?://[^\s]+', raw_input)
+    url = url_match.group(0) if url_match else raw_input
+    print(f"输入链接: {url}")
+    
+    # 先尝试直接从URL提取视频ID
+    video_id = _extract_video_id(url)
+    
     print(f"正在采集: {video_id}")
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
@@ -93,6 +125,17 @@ def main():
             Object.defineProperty(navigator,'webdriver',{get:()=>undefined});
             Object.defineProperty(navigator,'plugins',{get:()=>[1,2,3,4,5]});
         """)
+        
+        # 如果是短链接，先解析
+        if not video_id:
+            print("短链接，正在解析真实视频ID...")
+            video_id = _resolve_short_link(ctx, url)
+            if not video_id:
+                print("无法解析视频ID，请检查链接是否正确")
+                browser.close()
+                sys.exit(1)
+            print(f"解析成功，视频ID: {video_id}")
+        
         page = ctx.new_page()
         comments = _fetch_comments(page, video_id)
         if len(comments) < 5:

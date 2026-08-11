@@ -104,7 +104,8 @@ skills/
 | **install-to-central** | �?从GitHub安装技能，自动更新文档+Git推�?同步 | `/install-to-central <url>` |
 | **skill-creator** | 创建和优化技�?| `/skill-creator` |
 | **planning-with-files** | 复杂任务文件化规�?| `/planning-with-files` |
-| **self-improving-agent** | 错误学习与持续改�?| `/self-improving-agent` |
+| **self-improving-agent** | 错误学习与持续改进 | `/self-improving-agent` |
+| **gstack** | Router for the gstack skill suite | `/gstack` |
 
 ### 🔗 平台集成
 
@@ -197,9 +198,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：97**
+**当前技能数量：98**
 
-> 最后更新：2026-08-10
+> 最后更新：2026-08-11
 > 维护者：@dqtx760
 
 
