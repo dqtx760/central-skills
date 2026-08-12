@@ -106,6 +106,7 @@ skills/
 | **planning-with-files** | 复杂任务文件化规�?| `/planning-with-files` |
 | **self-improving-agent** | 错误学习与持续改进 | `/self-improving-agent` |
 | **gstack** | Router for the gstack skill suite | `/gstack` |
+| **project-cairn** | Standardize how an AI-collaboration project turns work into reusable knowledge | `/project-cairn` |
 
 ### 🔗 平台集成
 
@@ -198,9 +199,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：98**
+**当前技能数量：99**
 
-> 最后更新：2026-08-11
+> 最后更新：2026-08-12
 > 维护者：@dqtx760
 
 
