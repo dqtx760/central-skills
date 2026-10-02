@@ -109,6 +109,7 @@ skills/
 | **self-improving-agent** | 错误学习与持续改进 | `/self-improving-agent` |
 | **gstack** | Router for the gstack skill suite | `/gstack` |
 | **project-cairn** | Standardize how an AI-collaboration project turns work into reusable knowledge | `/project-cairn` |
+| **yao-meta-skill** | 技能工程元技能：创建/优化/评测 skill，含迁移发布打包、路由与 trigger 评测 | `/yao-meta-skill` |
 
 ### 🔗 平台集成
 
@@ -201,9 +202,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：101**
+**当前技能数量：102**
 
-> 最后更新：2026-08-23
+> 最后更新：2026-10-03
 > 维护者：@dqtx760
 
 
