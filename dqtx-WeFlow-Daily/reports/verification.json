@@ -1,0 +1,50 @@
+[
+  {
+    "name": "synthetic-content-valid",
+    "passed": true,
+    "result": {
+      "ok": true,
+      "errors": []
+    }
+  },
+  {
+    "name": "unfilled-placeholders",
+    "passed": true,
+    "result": {
+      "ok": false,
+      "errors": [
+        "Unfilled placeholders: [DIALOGUE | QUOTE], [NOTICE | EVENT | ANNOUNCEMENT], [TUTORIAL | NEWS | RESOURCE], [亮点或金句], [关键词1], [关键词2], [关键词3], [关键词4], [内容], [内容简介], [分享的教程或资源标题], [分类], [发送者昵称], [回答内容], [回答者], [常用词], [当前时间], [提问者], [数量], [日期], [时间], [时间范围], [昵称], [最后一条深夜消息], [标签], [次数], [消息内容], [消息时间], [热点话题名称], [熬夜冠军昵称], [特点], [百分比], [称号], [简要总结(50-100字)], [群友昵称], [群名称], [要点1], [要点2], [话题], [话题分类], [话题名称], [说话者], [问题内容], [高|中|低]"
+      ]
+    }
+  },
+  {
+    "name": "changed-css",
+    "passed": true,
+    "result": {
+      "ok": false,
+      "errors": [
+        "style changed from fixed template"
+      ]
+    }
+  },
+  {
+    "name": "missing-anchor",
+    "passed": true,
+    "result": {
+      "ok": false,
+      "errors": [
+        "Missing anchor target: sec-topics"
+      ]
+    }
+  },
+  {
+    "name": "changed-QR",
+    "passed": true,
+    "result": {
+      "ok": false,
+      "errors": [
+        "QR image addresses or referrerpolicy changed"
+      ]
+    }
+  }
+]
