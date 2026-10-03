@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+<title id="title">从微信群名到 HTML 日报</title>
+<desc id="desc">指定群名，使用 WeFlow MCP 读取消息，整理为 HTML 群聊日报。需要先安装 WeFlow 并配置 MCP。</desc>
+<rect width="1200" height="320" rx="16" fill="#141413"/>
+<g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+<g id="group-input">
+<path d="M80 66h88a16 16 0 0 1 16 16v48a16 16 0 0 1-16 16h-45l-23 22v-22H80a16 16 0 0 1-16-16V82a16 16 0 0 1 16-16z" fill="none" stroke="#8db5e2" stroke-width="4"/>
+<circle cx="97" cy="106" r="5" fill="#8db5e2"/><circle cx="124" cy="106" r="5" fill="#8db5e2"/><circle cx="151" cy="106" r="5" fill="#8db5e2"/>
+<text x="64" y="238" font-size="48" font-weight="700" fill="#f5f4ed">指定群名</text>
+</g>
+<g id="message-reading">
+<path d="M356 164h64m-18-18 18 18-18 18" fill="none" stroke="#788a5e" stroke-width="4"/>
+<text x="468" y="111" font-size="48" font-weight="700" fill="#8db5e2">WeFlow</text>
+<text x="468" y="169" font-size="48" font-weight="700" fill="#8db5e2">MCP</text>
+<text x="468" y="238" font-size="48" font-weight="700" fill="#f5f4ed">读取消息</text>
+</g>
+<g id="html-report">
+<path d="M758 164h64m-18-18 18 18-18 18" fill="none" stroke="#788a5e" stroke-width="4"/>
+<rect x="900" y="58" width="120" height="112" rx="8" fill="none" stroke="#8db5e2" stroke-width="4"/>
+<path d="M922 86h72m-72 22h52m-52 22h72m-72 22h52" fill="none" stroke="#c5c3b8" stroke-width="4"/>
+<text x="875" y="238" font-size="48" font-weight="700" fill="#f5f4ed">HTML 日报</text>
+</g></g></svg>

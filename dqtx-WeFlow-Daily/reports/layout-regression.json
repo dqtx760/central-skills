@@ -1,0 +1,86 @@
+{
+  "method": "DOM geometry fixtures measured with Microsoft YaHei via Pillow; not a browser or real-phone test",
+  "passed": 10,
+  "results": [
+    {
+      "width": 600,
+      "height": 364,
+      "word_count": 14,
+      "ellipse_bounds": true,
+      "no_overlap": true,
+      "minimum_font": 12
+    },
+    {
+      "width": 320,
+      "height": 256,
+      "word_count": 14,
+      "ellipse_bounds": true,
+      "no_overlap": true,
+      "minimum_font": 12
+    },
+    {
+      "width": 260,
+      "height": 230,
+      "word_count": 14,
+      "ellipse_bounds": true,
+      "no_overlap": true,
+      "minimum_font": 12
+    },
+    {
+      "width": 600,
+      "height": 364,
+      "word_count": 24,
+      "ellipse_bounds": true,
+      "no_overlap": true,
+      "minimum_font": 12
+    },
+    {
+      "width": 260,
+      "height": 230,
+      "word_count": 24,
+      "dense_content_fallback": true,
+      "all_words_preserved": true
+    },
+    {
+      "viewport": null,
+      "visible_viewport_sizing": true,
+      "card_scroll_height": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 700,
+        "offsetTop": 42,
+        "offsetLeft": 0
+      },
+      "visible_viewport_sizing": true,
+      "card_scroll_height": true
+    },
+    {
+      "viewport": {
+        "width": 740,
+        "height": 320,
+        "offsetTop": 0,
+        "offsetLeft": 10
+      },
+      "visible_viewport_sizing": true,
+      "card_scroll_height": true
+    },
+    {
+      "inflated_viewport": 8000,
+      "visible_screen": 844,
+      "clientY": 7400,
+      "screenY": 500,
+      "overlayTop": 6900,
+      "card_in_screen_estimate": true
+    },
+    {
+      "inflated_viewport": 8000,
+      "visible_screen": 844,
+      "clientY": 7800,
+      "screenY": 600,
+      "overlayTop": 7156,
+      "card_in_screen_estimate": true
+    }
+  ]
+}

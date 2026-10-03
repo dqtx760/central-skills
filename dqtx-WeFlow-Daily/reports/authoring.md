@@ -5,3 +5,5 @@
 模板是 file-backed fixture；input_files 为用户提供 TXT 与 HTML。output contract 为 UTF-8 固定模板日报。
 rollback boundary：仅删除新建技能包，不改变 MCP 配置、聊天数据或原技能。
 missing evidence：当前无可调用 WeFlow MCP，未执行真实群端到端生成；未做浏览器交互验证。触发场景人工审查：今天完整版、昨天简化版、同名群需选择；私聊/朋友圈/配置请求不触发。
+
+2026-10-03 布局更新：用户授权恢复椭圆词云和手机居中弹窗；本次变更与验证限制见 layout-fix.md。
