@@ -58,6 +58,7 @@ skills/
 | **frontend-slides** | HTML动画演示文稿 | `/frontend-slides` |
 | **huashu-slides** | 内容→PPTX端到端制�?| `/huashu-slides` |
 | **mindmap-ppt** | 思维导图→PPT | `/mindmap-ppt` |
+| **huashu-design** | 用HTML做高保真原型、幻灯片、动画、可视化与专家评审 | `/huashu-design` |
 
 ### 🔍 AI 资讯与搜�?
 | 技�?| 描述 | 用法 |
@@ -203,9 +204,9 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：103**
+**当前技能数量：104**
 
-> 最后更新：2026-10-03
+> 最后更新：2026-10-17
 > 维护者：@dqtx760
 
 
