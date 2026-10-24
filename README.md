@@ -77,6 +77,7 @@ skills/
 | **huashu-douyin-script** | 抖音脚本创作 | `/huashu-douyin-script` |
 | **notebooklm** | NotebookLM自动化（播客/视频/测验�?| `/notebooklm` |
 | **subtitle-optimizer** | SRT 字幕保留时间戳校对优化 | `/subtitle-optimizer` |
+| **jianying-subtitle-optimizer** | 剪映最新草稿字幕自动提取、智能纠错与原地加密写回 | `/jianying-subtitle-optimizer` |
 
 ### 🛠�?开发工�?
 | 技�?| 描述 | 用法 |
@@ -205,7 +206,7 @@ mklink /J "C:\Users\Administrator\.claude\skills\技能名" "C:\Users\Administra
 
 ## 📜 技能总数
 
-**当前技能数量：105**
+**当前技能数量：106**
 
 > 最后更新：2026-10-17
 > 维护者：@dqtx760
