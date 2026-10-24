@@ -1,0 +1,17 @@
+{
+  "name": "subtitle-optimizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent skill for reviewing and correcting SRT subtitle text with an interactive diff panel.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rancho-7/subtitle-optimizer.git"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "validate": "node --check scripts/generate_diff.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

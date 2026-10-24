@@ -1,0 +1,10 @@
+{
+  "corrections": [
+    {"from": "cloud\\s?code", "to": "Claude Code", "reason": "产品名称大小写", "regex": true},
+    {"from": "Jason", "to": "JSON", "reason": "ASR识别错误"},
+    {"from": "plug in", "to": "plugin", "reason": "单词分写错误"},
+    {"from": "绘画", "to": "会话", "reason": "近音字错误"},
+    {"from": "Jamine", "to": "Gemini", "reason": "ASR识别错误"},
+    {"from": "web\\s*-?\\s?coding", "to": "vibe coding", "reason": "网络俚语", "regex": true}
+  ]
+}
