@@ -1,11 +1,16 @@
 ---
 name: zsxq-shared
 version: 1.3.1
-description: "知识星球 CLI 共享基础：认证登录（auth login/logout/status）、配置诊断（doctor/config show）、通用 API 调用规范（api list/api call/api raw 调用底层接口或原始 HTTP 接口）、星球与主题分享链接拼接（电脑端 / 手机端）、写入与删除操作的安全规则、常见错误码处理（401 token 过期、缺参数等）。当用户首次登录、退出登录、查看认证状态、调用 zsxq-cli api raw / api call、需要拼接知识星球分享链接，或遇到认证或 HTTP 错误时使用。"
+description: 知识星球 CLI 共享基础：认证登录（auth login/logout/status）、配置诊断（doctor/config
+  show）、通用 API 调用规范（api list/api call/api raw 调用底层接口或原始 HTTP 接口）、星球与主题分享链接拼接（电脑端
+  / 手机端）、写入与删除操作的安全规则、常见错误码处理（401 token 过期、缺参数等）。当用户首次登录、退出登录、查看认证状态、调用 zsxq-cli
+  api raw / api call、需要拼接知识星球分享链接，或遇到认证或 HTTP 错误时使用。
 metadata:
   requires:
-    bins: ["zsxq-cli"]
-  cliHelp: "zsxq-cli auth --help"
+    bins:
+      - zsxq-cli
+  cliHelp: zsxq-cli auth --help
+disable-model-invocation: true
 ---
 
 # zsxq-cli 共享规则

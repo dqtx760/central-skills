@@ -1,11 +1,13 @@
 ---
 name: zsxq-note
 version: 1.3.1
-description: "知识星球公开笔记管理：创建笔记、编辑笔记、查看笔记详情、查看笔记列表、删除笔记。当用户需要在知识星球创建可分享的公开笔记、编辑笔记、查看笔记详情、删除笔记、或查看历史笔记时使用。注意：笔记是公开内容，任何持有链接的人都可访问。"
+description: 知识星球公开笔记管理：创建笔记、编辑笔记、查看笔记详情、查看笔记列表、删除笔记。当用户需要在知识星球创建可分享的公开笔记、编辑笔记、查看笔记详情、删除笔记、或查看历史笔记时使用。注意：笔记是公开内容，任何持有链接的人都可访问。
 metadata:
   requires:
-    bins: ["zsxq-cli"]
-  cliHelp: "zsxq-cli note --help"
+    bins:
+      - zsxq-cli
+  cliHelp: zsxq-cli note --help
+disable-model-invocation: true
 ---
 
 # note

@@ -1,6 +1,8 @@
 ---
 name: advisor-orchestration
-description: 使用 Advisor 多代理编排完成软件开发任务。适用于功能开发、修复、重构、迁移及需要先规划、按复杂度路由实现、独立审查和集成验收的请求；所有规划固定交给 Sol High。
+description: 使用 Advisor
+  多代理编排完成软件开发任务。适用于功能开发、修复、重构、迁移及需要先规划、按复杂度路由实现、独立审查和集成验收的请求；所有规划固定交给 Sol High。
+disable-model-invocation: true
 ---
 
 # Advisor 编排

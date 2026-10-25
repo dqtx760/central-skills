@@ -2,6 +2,7 @@
 name: agently-mail
 description: 通过 agently-cli 命令行工具操作邮件：发送、回复、转发、搜索、读取、下载附件、管理收件箱。当用户需要进行任何邮件相关操作时使用此 skill。
 version: 1.0.0
+disable-model-invocation: true
 ---
 
 # Agently Mail
